@@ -38,10 +38,13 @@ The program will return an error and exit cleanly if:
 
 ## Usage
 To compile and run the game:
+
 `make`
 
 Run the executable with a valid map file:
+
 `./so_long maps/choose_map` 
 
 Example:
+
 `./so_long maps/map_1.ber`
