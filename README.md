@@ -34,3 +34,14 @@ The program will return an error and exit cleanly if:
 - The map does not meet the required character composition.
 - The map file is misconfigured.
 - Errors will be indicated by displaying Error\n followed by a specific error message.
+
+
+## Usage
+To compile and run the game:
+`make`
+
+Run the executable with a valid map file:
+`./so_long maps/choose_map` 
+
+Example:
+`./so_long maps/map_1.ber`
