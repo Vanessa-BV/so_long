@@ -22,24 +22,19 @@ int	enclosed_by_wall(char **map, int x, int y)
 	return (0);
 }
 
-static bool	flood_fill(t_application *temp, int current_x, int current_y)
+void	flood_fill(t_application *temp, int current_x, int current_y)
 {
 	if (temp->map[current_y][current_x] == '1')
-		return (false);
+		return ;
 	if (temp->map[current_y][current_x] == 'E')
 		temp->exit_exists = true;
 	if (temp->map[current_y][current_x] == 'C')
 		temp->collectables_collected += 1;
 	temp->map[current_y][current_x] = '1';
-	if (flood_fill(temp, current_x + 1, current_y))
-		return (true);
-	if (flood_fill(temp, current_x - 1, current_y))
-		return (true);
-	if (flood_fill(temp, current_x, current_y + 1))
-		return (true);
-	if (flood_fill(temp, current_x, current_y - 1))
-		return (true);
-	return (false);
+	flood_fill(temp, current_x + 1, current_y);
+	flood_fill(temp, current_x - 1, current_y);
+	flood_fill(temp, current_x, current_y + 1);
+	flood_fill(temp, current_x, current_y - 1);
 }
 
 void	initialize_temp_data(t_application *temp, t_application game)
