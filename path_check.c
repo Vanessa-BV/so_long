@@ -45,6 +45,8 @@ void	initialize_temp_data(t_application *temp, t_application game)
 	while (i < game.length)
 	{
 		temp->map[i] = ft_strdup(game.map[i]);
+		if (temp->map[i] == NULL)
+			exit_error("Could not create a temporray string.", &game);
 		i++;
 	}
 	temp->exit_exists = false;
